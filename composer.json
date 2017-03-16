@@ -1,0 +1,15 @@
+{
+	"name": "technical-test",
+    "authors": [
+        {
+            "name": "Davide",
+            "email": "davide.crestini94@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^3.7"
+    },
+    "config": {
+        "vendor-dir": "app/vendor"
+    }
+}

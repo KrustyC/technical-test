@@ -1,0 +1,29 @@
+{
+  "name": "technical-test",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KrustyC/technical-test.git"
+  },
+  "author": "Davide Crestini <davide.crestini94@gmail.com>",
+  "dependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "scripts": {
+    "dev": "webpack -d --watch",
+    "build": "webpack -p"
+  }
+}
