@@ -3,20 +3,19 @@
 # Installation
 To install type the following: 
 ```
-composer.phar install
+$> composer.phar install
 
-npm install material-ui
+$> npm install 
 
-bower install
+$> bower install
 ```
 
 # Usage
 
 To run the test type the following:
 ```
-cd public
-
-php -S localhost:8080
+$> cd public
+$> php -S localhost:8080
 
 ```
 Open a web browser and insert the following URL: 
@@ -24,7 +23,7 @@ Open a web browser and insert the following URL:
 
 # Testing
 To run the test type the following:
-`./app/vendor/bin/phpunit`
+`$> ./app/vendor/bin/phpunit`
 
 ## Requirements
 
