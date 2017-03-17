@@ -22,12 +22,6 @@ $app->get("/", function(Request $request, Response $response) {
     return $response->write(file_get_contents($file));
 });
 
-$app->get('/subject-data/', function (Request $request, Response $response) {
-
-	$response->withStatus(404);
-	$response->write(json_encode(array("Error 404"=>"A subject is needed")));
-    return $response->withHeader('Content-type', 'application/json; charset=utf-8');
-});
 
 $app->get('/subject-data/{id}', function (Request $request, Response $response) {
     $id = $request->getAttribute('id');
@@ -36,14 +30,15 @@ $app->get('/subject-data/{id}', function (Request $request, Response $response) 
     $data = $fh->getSubjectData(file_get_contents("../app/data/subject-data.csv"),$id);
 
     if(is_null($data)){
-    	$response->withStatus(404);
-		$response->write(json_encode(array("Error 404"=>"Subject not found")));
+        throw new \Slim\Exception\NotFoundException($request, $response);
     }
     else{
-    	$response->withStatus(200);
-		$response->write(json_encode($data, JSON_PRETTY_PRINT));
+        $response->withStatus(200);
+        $response->write(json_encode($data, JSON_PRETTY_PRINT));
     }
     return $response->withHeader('Content-type', 'application/json; charset=utf-8');
 });
+
+
 
 $app->run();
